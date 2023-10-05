@@ -24,9 +24,10 @@ struct UserDetailView: View {
         }
     }
 }
-
+#if DEBUG
 struct UserDetailView_Previews: PreviewProvider {
     static var previews: some View {
         UserDetailView(selectedUser: User.preview)
     }
 }
+#endif

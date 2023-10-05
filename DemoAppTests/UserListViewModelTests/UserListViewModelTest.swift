@@ -10,7 +10,7 @@ import XCTest
 final class DemoAppTests: XCTestCase {
     var sut : UserListViewModel!
     
-    @MainActor func testGetUserListWithSuccess() async {
+    @MainActor func testGetUserListWithSuccess()  {
         //Given
         sut = UserListViewModel(userListWebService: MockUserListService(resultForResponse: .success([User.preview])))
         // when
@@ -28,7 +28,7 @@ final class DemoAppTests: XCTestCase {
         }
     }
     
-    @MainActor func testGetUserListWithFailure() async {
+    @MainActor func testGetUserListWithFailure()  {
         
         //Given
         sut = UserListViewModel(userListWebService: MockUserListService(resultForResponse: .failure(MockError.error)))
@@ -45,7 +45,7 @@ final class DemoAppTests: XCTestCase {
             
         }
     }
-    @MainActor func testRefreshDataWithSuccess() async {
+    @MainActor func testRefreshDataWithSuccess()  {
         //Given
         sut = UserListViewModel(userListWebService: MockUserListService(resultForResponse: .success([User.preview])))
         // when
@@ -63,7 +63,7 @@ final class DemoAppTests: XCTestCase {
         }
     }
     
-    @MainActor func testRefreshDataWithFailure() async {
+    @MainActor func testRefreshDataWithFailure()  {
         
         //Given
         sut = UserListViewModel(userListWebService: MockUserListService(resultForResponse: .failure(MockError.error)))

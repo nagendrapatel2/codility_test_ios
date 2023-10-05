@@ -33,9 +33,10 @@ struct UserView: View {
         
     }
 }
-
+#if DEBUG
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
         UserView(user: User.preview)
     }
 }
+#endif

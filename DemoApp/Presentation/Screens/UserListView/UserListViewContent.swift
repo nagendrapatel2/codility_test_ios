@@ -20,9 +20,10 @@ struct UserListViewContent: View {
         }
     }
 }
-
+#if DEBUG
 struct UserListViewContent_Previews: PreviewProvider {
     static var previews: some View {
         UserListViewContent(userListViewModel: UserListViewModel(userListWebService: MockUserListService()))
     }
 }
+#endif

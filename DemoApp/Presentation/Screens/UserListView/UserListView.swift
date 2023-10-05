@@ -19,13 +19,13 @@ struct UserListView: View {
         }
     }
 }
-
+#if DEBUG
 struct UserListView_Previews: PreviewProvider {
     static var previews: some View {
         UserListView()
     }
 }
-
+#endif
 extension UserListView {
     init() {
 #if DEBUG

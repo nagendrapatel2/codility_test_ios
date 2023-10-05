@@ -8,34 +8,37 @@
 import XCTest
 
 final class UserDetailViewUITests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+    var app : XCUIApplication!
+    override  func setUp() {
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launchArguments = ["_ui_testing"]
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        app = nil
     }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    
+    func testUserListDetailViewGetSuccess(){
+        app.launchEnvironment = ["networking_success" : "1"]
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        let userView = app.otherElements["userViewContent"]
+        XCTAssertTrue(userView.waitForExistence(timeout: 5))
+        let listview = app.collectionViews["userlist"]
+        XCTAssertTrue(listview.exists)
+        XCTAssertTrue(listview.cells.count == 1)
+        let cell = listview.cells.buttons["userListCell"]
+        XCTAssertTrue(cell.exists)
+        let userName = cell.staticTexts["Kayla Lopez"]
+        XCTAssertTrue(userName.exists)
+        cell.tap()
+        XCTAssertTrue(app.collectionViews.staticTexts["ID : 1"].exists)
+        XCTAssertTrue(app.collectionViews.staticTexts["Job : Herbalist"].exists)
+        XCTAssertTrue(app.collectionViews.staticTexts["Email : kayla.lopez.1@slingacademy.com"].exists)
+        XCTAssertTrue(app.collectionViews.staticTexts["Gender : female"].exists)
+        XCTAssertTrue(app.collectionViews.staticTexts["Street : 3388 Roger Wells Apt"].exists)
+        XCTAssertTrue(app.collectionViews.staticTexts["City : Humphreyfurt"].exists)
+        XCTAssertTrue(app.collectionViews.staticTexts["Zipcode : 79574"].exists)
+        XCTAssertTrue(app.collectionViews.staticTexts["Country : Greenland"].exists)
+        
     }
 }
