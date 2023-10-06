@@ -1,7 +1,9 @@
 
 # Demo App
 
-Short project description goes here.
+A demo project showcasing the setup of the SwiftUI app
+The app uses the REST API to show the list of users and details about them.
+
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
@@ -19,7 +21,9 @@ Short project description goes here.
 
 ## Features
 - Show list of user when app open
-- Show Details user after selecting perticular user  
+- Show Details user after selecting perticular user
+- Try to cover  all test coverage
+- Use SwiftUI + Combine implementation
 
 
 ## Contact Information
