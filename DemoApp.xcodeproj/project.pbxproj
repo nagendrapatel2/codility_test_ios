@@ -147,7 +147,6 @@
 				1870359D2AA07E4600A32210 /* Utilities */,
 				1870359C2AA057D900A32210 /* Application */,
 				187035952AA051CA00A32210 /* ConfigurationFiles */,
-				187035942AA0519300A32210 /* SupportingFiles */,
 				187035932AA0515A00A32210 /* Service */,
 				187035922AA0514000A32210 /* ViewModel */,
 				187035912AA0512700A32210 /* Model */,
@@ -217,14 +216,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		187035942AA0519300A32210 /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				187035692AA0503B00A32210 /* Assets.xcassets */,
-			);
-			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
 		187035952AA051CA00A32210 /* ConfigurationFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				187035A62AA0892C00A32210 /* Info.plist */,
+				187035692AA0503B00A32210 /* Assets.xcassets */,
 				1870356B2AA0503B00A32210 /* DemoApp.entitlements */,
 			);
 			path = Resources;
